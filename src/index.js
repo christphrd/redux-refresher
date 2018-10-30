@@ -8,10 +8,20 @@ import {createStore} from 'redux';
 const store = createStore(reducer);
 
 function reducer() {
-    return 'state for now'
+    return 'state'
 };
 
-console.log(store.getState());
+console.log('store is: ', store)
+console.log('state is: ', store.getState());
+
+const action = {
+    type: 'updateState',
+    payload: {
+        update: 'next state'
+    }
+}
+
+store.dispatch(action)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
