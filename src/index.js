@@ -7,11 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 const store = createStore(reducer);
 
-function reducer() {
+function reducer(state, action) {
+    console.log(action)
+
     return 'state'
 };
 
-console.log('store is: ', store)
+console.log('store is: ', store);
 console.log('state is: ', store.getState());
 
 const action = {
