@@ -8,7 +8,9 @@ import {createStore} from 'redux';
 const store = createStore(reducer);
 
 function reducer(state, action) {
-    console.log(action)
+    if (action.type === 'updateState') {
+        return action.payload.update
+    }
 
     return 'state'
 };
@@ -24,6 +26,8 @@ const action = {
 }
 
 store.dispatch(action)
+
+console.log("after dispatched, the state is: ", store.getState())
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
