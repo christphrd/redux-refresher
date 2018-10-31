@@ -4,30 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import {createStore} from 'redux';
-const store = createStore(reducer);
+import {createStore, combineReducers} from 'redux';
 
-function reducer(state, action) {
-    if (action.type === 'updateState') {
-        return action.payload.update
-    }
-
-    return 'state'
+function productsReducer(state = [], action) {
+    return state
 };
 
+function usersReducer(state = '', action) {
+    return state
+};
+
+const allReducers = combineReducers({
+    products: productsReducer,
+    users: usersReducer
+});
+
+const store = createStore(allReducers);
 console.log('store is: ', store);
 console.log('state is: ', store.getState());
-
-const action = {
-    type: 'updateState',
-    payload: {
-        update: 'next state'
-    }
-}
-
-store.dispatch(action)
-
-console.log("after dispatched, the state is: ", store.getState())
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
