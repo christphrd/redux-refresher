@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ToDoForm = () => {
+const ToDoForm = props => {
+    console.log(props)
     return(
         <form onSubmit={e => e.preventDefault()}>
             <input placeholder="What?"></input>
