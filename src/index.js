@@ -7,9 +7,9 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
-import allReducers from './reducers';
+import rootReducer from './reducers';
 
-const store = createStore(allReducers);
+const store = createStore(rootReducer);
 console.log('store is: ', store);
 console.log('state is: ', store.getState());
 

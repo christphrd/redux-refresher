@@ -2,8 +2,6 @@ import { combineReducers } from 'redux';
 
 import ToDoReducer from './ToDoReducer.js';
 
-const allReducers = combineReducers({
+export default combineReducers({
     toDoItems: ToDoReducer
 });
-
-export default allReducers
